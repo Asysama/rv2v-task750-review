@@ -1,0 +1,69 @@
+{
+  "overall": "PASS",
+  "n_samples": 6,
+  "gates": {
+    "output_contract": {
+      "result": "PASS",
+      "evidence": {
+        "input_video": {
+          "codec": "h264",
+          "w": 512,
+          "h": 512,
+          "fps": "24/1",
+          "n": 120,
+          "ok": true
+        },
+        "target_video": {
+          "codec": "h264",
+          "w": 512,
+          "h": 512,
+          "fps": "24/1",
+          "n": 120,
+          "ok": true
+        }
+      }
+    },
+    "violating_object_only_mask": {
+      "result": "PASS",
+      "evidence": {
+        "bad_frames": []
+      }
+    },
+    "real_scaling": {
+      "result": "PASS",
+      "evidence": {
+        "n_samples": 6,
+        "distinct_fingerprints": 6
+      }
+    },
+    "official_environment_canonical_validator": {
+      "result": "PASS",
+      "evidence": {
+        "stdout_tail": " \"core_object_count\": 4,\n      \"reference_object_count\": 2,\n      \"payload_object_count\": 6,\n      \"valid\": true\n    },\n    {\n      \"schema\": \"rv2v-sample-validation/1\",\n      \"sample_id\": \"Task_750_first_frame_mask_causal_object_inpainting_000000006\",\n      \"core_object_count\": 4,\n      \"reference_object_count\": 2,\n      \"payload_object_count\": 6,\n      \"valid\": true\n    }\n  ],\n  \"valid\": true\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    "decoded_matched_control": {
+      "result": "PASS",
+      "evidence": {
+        "matched_pre_frames": 1,
+        "diverging_frames": 119
+      }
+    },
+    "semantic_consistency": {
+      "result": "PASS",
+      "evidence": {
+        "issues": [],
+        "prompt_len": 393
+      }
+    }
+  },
+  "per_sample": {
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001": "PASS",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002": "PASS",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003": "PASS",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004": "PASS",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005": "PASS",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006": "PASS"
+  }
+}

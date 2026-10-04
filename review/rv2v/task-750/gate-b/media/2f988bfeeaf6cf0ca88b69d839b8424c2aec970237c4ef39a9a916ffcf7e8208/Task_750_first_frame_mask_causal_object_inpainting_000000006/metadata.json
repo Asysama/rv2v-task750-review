@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000006",
+  "task": {
+    "id": "Task_750",
+    "name": "first_frame_mask_causal_object_inpainting",
+    "modality": "rv2v"
+  },
+  "source": {
+    "dataset": "rv2v-workflow-task750-propainter-davis-standin",
+    "split": "gate-b-validation",
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000006",
+    "uri": "generator://task750/000000006"
+  },
+  "media": {
+    "input": {
+      "file": "input_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    },
+    "target": {
+      "file": "target_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    }
+  },
+  "reference": {
+    "directory": "reference",
+    "assets": [
+      {
+        "path": "reference/mask_video.mp4",
+        "mime_type": "video/mp4",
+        "bytes": 17405,
+        "sha256": "5278bf30438d45003dece162372ddab64268bc96d3c5361fcb66708b52e1e823",
+        "properties": {
+          "width": 512,
+          "height": 512,
+          "fps": 24,
+          "num_frames": 120
+        }
+      },
+      {
+        "path": "reference/object_appearance.png",
+        "mime_type": "image/png",
+        "bytes": 135,
+        "sha256": "b9c1fc4c66680432f845a5d3bc61cfd5596b99778de3366a954c8b9d99ae5c29",
+        "properties": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    ]
+  },
+  "pipeline": {
+    "name": "task750-propainte-davis-inpainting-standin",
+    "version": "0.1.0",
+    "commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8"
+  },
+  "optional": {
+    "canary_only": false,
+    "excluded_from_final_and_exporters": false,
+    "human_evaluator_login": "QinHuayi1001",
+    "human_evaluator_selection_method": "live RV2V collaborator (verified via /repos/.../collaborators/QinHuayi1001 returns 204). Owner explicitly chose from queue-sorted eligible reviewers per V2V Workflow PDF step 6."
+  },
+  "identity": {
+    "sample_fingerprint": "9d4249871d72814d2d3b94a27613811d99d40c0485b72fe1b93bf0fc2ed7a468"
+  }
+}

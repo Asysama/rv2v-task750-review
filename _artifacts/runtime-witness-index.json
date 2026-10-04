@@ -1,0 +1,48 @@
+{
+  "schema_version": "counterfactual-runtime-witness-index-v1",
+  "pass": true,
+  "witness_count": 1,
+  "case_count": 6,
+  "witnesses": {
+    "c15d9f5c5561ac3753bed4523a57c12b26d6aae52cd33edc9eb6e415e227360e": {
+      "path": "runtime-witness.json",
+      "sha256": "c15d9f5c5561ac3753bed4523a57c12b26d6aae52cd33edc9eb6e415e227360e",
+      "generator": "Task_750_first_frame_mask_causal_object_inpainting",
+      "case_set": "gate-b-001",
+      "source_commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8"
+    }
+  },
+  "cases": {
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001": {
+      "witness_id": "c15d9f5c5561ac3753bed4523a57c12b26d6aae52cd33edc9eb6e415e227360e",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000001/metadata.json",
+      "metadata_sha256": "9a454ab402993d7112658e0ac13643422164afdc68b7aeec5729bfd06b893c2c"
+    },
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002": {
+      "witness_id": "c15d9f5c5561ac3753bed4523a57c12b26d6aae52cd33edc9eb6e415e227360e",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000002/metadata.json",
+      "metadata_sha256": "db14e19f241e5a794ab5adefea31e74045466e6fb672b08f2f3f4061b559cd65"
+    },
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003": {
+      "witness_id": "c15d9f5c5561ac3753bed4523a57c12b26d6aae52cd33edc9eb6e415e227360e",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000003/metadata.json",
+      "metadata_sha256": "df6f53fe9be50afcf6ba26ff8337fde968bdaba2110c561e12a0ba0e15636f9b"
+    },
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004": {
+      "witness_id": "c15d9f5c5561ac3753bed4523a57c12b26d6aae52cd33edc9eb6e415e227360e",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000004/metadata.json",
+      "metadata_sha256": "f3b767c9a95ea2907fb1ec3660e9254228c68f017e83dc9ce8bea7fff0d7d30a"
+    },
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005": {
+      "witness_id": "c15d9f5c5561ac3753bed4523a57c12b26d6aae52cd33edc9eb6e415e227360e",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000005/metadata.json",
+      "metadata_sha256": "10747423e1a0f168166ed7d71e9d8483450037232b0d43334516010fe5ded6a9"
+    },
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006": {
+      "witness_id": "c15d9f5c5561ac3753bed4523a57c12b26d6aae52cd33edc9eb6e415e227360e",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000006/metadata.json",
+      "metadata_sha256": "ce1b472b7e898c8a8f5a63afeb8618c8a76aeba04462e51998c571539f558c30"
+    }
+  },
+  "failures": []
+}

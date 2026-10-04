@@ -1,0 +1,32 @@
+[
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000001",
+    "bundle_sha": "56e8bf303c2da53bc6883879a1a5a3ecdb1ed00207a852d72cd9ad642829defd",
+    "file_count": 6
+  },
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000002",
+    "bundle_sha": "218b620f7e65da9a1f5e181a3498ba86d8edc33df554052f969507445f821d7b",
+    "file_count": 6
+  },
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000003",
+    "bundle_sha": "b9c08b9857f11561b909cd7cbbfbb0f99fb3f5d8c86faab51db7ea11ef6da73c",
+    "file_count": 6
+  },
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000004",
+    "bundle_sha": "50c6d64c2413e1461d99e0cbf3c8e5a8fb395dcb869e1625de5f6dfdfb67b415",
+    "file_count": 6
+  },
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000005",
+    "bundle_sha": "e59d6c4ad9cfd47106da5e1c6fd735cda2c00d99378ed9d1d24e4dfdb28a1b4a",
+    "file_count": 6
+  },
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000006",
+    "bundle_sha": "e33fb47d3e5caa26d866cb6ca2afb88c2d0d11b7a15e6f1a4e72226f0ebe0d4c",
+    "file_count": 6
+  }
+]

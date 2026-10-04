@@ -1,0 +1,18 @@
+{
+  "schema_version": "rv2v-task750-gate-b-local-bundle/1",
+  "official": false,
+  "head_commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8",
+  "head_branch": "asysama/generator/task-750/gate-b",
+  "human_evaluator_login": "QinHuayi1001",
+  "evidence_digest": "2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208",
+  "sample_count": 6,
+  "samples": [
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006"
+  ],
+  "media_root": "media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208"
+}

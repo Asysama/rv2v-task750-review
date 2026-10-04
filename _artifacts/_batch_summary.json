@@ -1,0 +1,62 @@
+[
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000001",
+    "files": [
+      "input_video.mp4",
+      "metadata.json",
+      "prompt.txt",
+      "reference",
+      "target_video.mp4"
+    ]
+  },
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000002",
+    "files": [
+      "input_video.mp4",
+      "metadata.json",
+      "prompt.txt",
+      "reference",
+      "target_video.mp4"
+    ]
+  },
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000003",
+    "files": [
+      "input_video.mp4",
+      "metadata.json",
+      "prompt.txt",
+      "reference",
+      "target_video.mp4"
+    ]
+  },
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000004",
+    "files": [
+      "input_video.mp4",
+      "metadata.json",
+      "prompt.txt",
+      "reference",
+      "target_video.mp4"
+    ]
+  },
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000005",
+    "files": [
+      "input_video.mp4",
+      "metadata.json",
+      "prompt.txt",
+      "reference",
+      "target_video.mp4"
+    ]
+  },
+  {
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000006",
+    "files": [
+      "input_video.mp4",
+      "metadata.json",
+      "prompt.txt",
+      "reference",
+      "target_video.mp4"
+    ]
+  }
+]

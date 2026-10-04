@@ -1,0 +1,10 @@
+{
+  "schema_version": "counterfactual-runtime-witness-audit-v1",
+  "pass": true,
+  "generator": "Task_750_first_frame_mask_causal_object_inpainting",
+  "case_set": "gate-b-001",
+  "commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8",
+  "artifact_count": 37,
+  "accepted_case_count": 6,
+  "failures": []
+}

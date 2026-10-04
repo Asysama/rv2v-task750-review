@@ -1,0 +1,4 @@
+artifacts.bak/
+*.bak
+__pycache__/
+.bundle_sha

@@ -1,0 +1,174 @@
+{
+  "schema_version": "counterfactual-runtime-witness-v1",
+  "status": "success",
+  "invalid_reasons": [],
+  "started_at_utc": "2026-10-04T11:58:54.455727+00:00",
+  "finished_at_utc": "2026-10-04T11:59:02.295069+00:00",
+  "generator": "Task_750_first_frame_mask_causal_object_inpainting",
+  "case_set": "gate-b-001",
+  "accepted_cases": [
+    {
+      "case_id": "Task_750_first_frame_mask_causal_object_inpainting_000000001",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000001/metadata.json",
+      "metadata_sha256": "9a454ab402993d7112658e0ac13643422164afdc68b7aeec5729bfd06b893c2c"
+    },
+    {
+      "case_id": "Task_750_first_frame_mask_causal_object_inpainting_000000002",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000002/metadata.json",
+      "metadata_sha256": "db14e19f241e5a794ab5adefea31e74045466e6fb672b08f2f3f4061b559cd65"
+    },
+    {
+      "case_id": "Task_750_first_frame_mask_causal_object_inpainting_000000003",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000003/metadata.json",
+      "metadata_sha256": "df6f53fe9be50afcf6ba26ff8337fde968bdaba2110c561e12a0ba0e15636f9b"
+    },
+    {
+      "case_id": "Task_750_first_frame_mask_causal_object_inpainting_000000004",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000004/metadata.json",
+      "metadata_sha256": "f3b767c9a95ea2907fb1ec3660e9254228c68f017e83dc9ce8bea7fff0d7d30a"
+    },
+    {
+      "case_id": "Task_750_first_frame_mask_causal_object_inpainting_000000005",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000005/metadata.json",
+      "metadata_sha256": "10747423e1a0f168166ed7d71e9d8483450037232b0d43334516010fe5ded6a9"
+    },
+    {
+      "case_id": "Task_750_first_frame_mask_causal_object_inpainting_000000006",
+      "metadata_path": "Task_750_first_frame_mask_causal_object_inpainting_000000006/metadata.json",
+      "metadata_sha256": "ce1b472b7e898c8a8f5a63afeb8618c8a76aeba04462e51998c571539f558c30"
+    }
+  ],
+  "command_argv": [
+    "python3",
+    "scripts/generate.py",
+    "--n-samples",
+    "6",
+    "--out",
+    "/tmp/rv2v-task750-review/_artifacts"
+  ],
+  "command_shell_escaped": "python3 scripts/generate.py --n-samples 6 --out /tmp/rv2v-task750-review/_artifacts",
+  "working_directory": "/Users/asysama/siyuan/rv2v-demo/rv2v/generators/not_ready/Task_750_first_frame_mask_causal_object_inpainting_data-generator",
+  "exit_code": 0,
+  "repository_before": {
+    "root": "/Users/asysama/siyuan/rv2v-demo/rv2v",
+    "commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8",
+    "worktree_status": null
+  },
+  "repository_after": {
+    "root": "/Users/asysama/siyuan/rv2v-demo/rv2v",
+    "commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8",
+    "worktree_status": null
+  },
+  "dirty_state_reason": "Siyuan workflow demo Task_750 fresh generator",
+  "runtime": {
+    "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "operating_system": "macOS-26.7.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "packages": {
+      "numpy": "2.5.3",
+      "imageio": "2.38.0",
+      "imageio-ffmpeg": "0.6.0"
+    },
+    "pip_freeze": [
+      "ImageIO==2.38.0",
+      "imageio-ffmpeg==0.6.0",
+      "numpy==2.5.3",
+      "pillow==12.3.0",
+      "wheel==0.47.0"
+    ],
+    "ffmpeg": "ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with Apple clang version 21.0.0 (clang-2100.1.1.101)\nconfiguration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.1_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon\nlibavutil      61.  1.101 / 61.  1.101\nlibavcodec     63.  1.101 / 63.  1.101\nlibavformat    63.  1.101 / 63.  1.101\nlibavdevice    63.  1.101 / 63.  1.101\nlibavfilter    12.  1.101 / 12.  1.101\nlibswscale     10.  1.101 / 10.  1.101\nlibswresample   7.  1.101 /  7.  1.101\n\nExiting with exit code 0",
+    "nvidia_smi": null,
+    "macos_displays": "Graphics/Displays:\n\n    Apple M5:\n\n      Chipset Model: Apple M5\n      Type: GPU\n      Bus: Built-In\n      Total Number of Cores: 10\n      Vendor: Apple (0x106b)\n      Metal Support: Metal 4\n      Displays:\n        Color LCD:\n          Display Type: Built-in Liquid Retina Display\n          Resolution: 2560 x 1664 Retina\n          Main Display: Yes\n          Mirror: Off\n          Online: Yes\n          Automatically Adjust Brightness: Yes\n          Connection Type: Internal",
+    "container_image": null,
+    "container_environment": {},
+    "declared_components": {},
+    "nested_component_witnesses": []
+  },
+  "dependency_locks": [
+    {
+      "path": "/Users/asysama/siyuan/rv2v-demo/rv2v/generators/not_ready/Task_750_first_frame_mask_causal_object_inpainting_data-generator/requirements.txt",
+      "sha256": "30b0ff8c2df658e429bb8618a0b095bb76d67d6ed110922aa698d0a26f875c27"
+    }
+  ],
+  "artifact_root": "/private/tmp/rv2v-task750-review/_artifacts",
+  "artifact_sha256_before": {
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/input_video.mp4": "92b45961b6ed8aaf59e3aa4cfb17e58c12d54a7f68b6100a9bd8459490074748",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/metadata.json": "9a454ab402993d7112658e0ac13643422164afdc68b7aeec5729bfd06b893c2c",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/prompt.txt": "62cca60a33411078c82cc480a2c0eb96561301856bb3e0462c0be697516ae4fc",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/reference/mask_video.mp4": "804eb06a5fde3e76d4cbc864782e0e78a4624947518168244b7487a27d583b56",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/reference/object_appearance.png": "0d4c5ad34c853426f4563e0250fb617326b45a3ecfa34ef41f4d6cf7d35d30ad",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/target_video.mp4": "f61e62d76be812a11af7de4928d344fe0b1d029bcaad98ad13f89c0d8ee5b2e3",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/input_video.mp4": "295ae07e83fbc2cd9d9ea31955ee2451dcb95860965d454a875c05933502daf9",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/metadata.json": "db14e19f241e5a794ab5adefea31e74045466e6fb672b08f2f3f4061b559cd65",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/prompt.txt": "a6945ef11f390a60ebdc7651e907d148c2c632cacd1af282b5288f3372608f98",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/reference/mask_video.mp4": "e3c706f6c91fbaef1b019cf2545d76816d6721c29c917de274bb014d48a697de",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/reference/object_appearance.png": "f073c8c821aad8dc76abdae29735336649077fcdd6f62a1cdea620157d8dabb1",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/target_video.mp4": "57832e36c01c46195dc4ecfa1cdf7eb9214cb62430eadb05d98f3417bb148f69",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/input_video.mp4": "a83760ee6f73fd5d31c61170ef9abc7d53c61f8fcd4cea57dbfb72b7012a2aef",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/metadata.json": "df6f53fe9be50afcf6ba26ff8337fde968bdaba2110c561e12a0ba0e15636f9b",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/prompt.txt": "cf44dfc2af586bc77d836248c1e8baee1b54b46b6be2ddfb02d660c62fbc442b",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/reference/mask_video.mp4": "e935bfea91b8d0ecec3fb96a908b1f3c15a45f192f4f8bb682acbae198e2b8bd",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/reference/object_appearance.png": "a9cedfcee121b6c41a51f8bb675578d535333fe32d06bea8eb8d849a16806ae5",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/target_video.mp4": "5479c90d7a03703e67404fae3a66eba210c850a59a13c16e7492372951868d56",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/input_video.mp4": "03a7aef0b39a9198df9e32d8fdb59ddc38b5a539e08fe4328d61b4c9f5063c3c",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/metadata.json": "f3b767c9a95ea2907fb1ec3660e9254228c68f017e83dc9ce8bea7fff0d7d30a",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/prompt.txt": "3312bd10d2a13b514abc06a4ac9063a5b92cef2c26a5513956950599bde73758",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/reference/mask_video.mp4": "eeb34de8b4284df5b505c8c6886e081150019326b1c794e624e9c46726f258a0",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/reference/object_appearance.png": "9764fdd560be6f9424965a5aecf756df021f007c0010637b479f723bf4250bc1",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/target_video.mp4": "1abd25c6950e7b96b88829ac05a2d0ce1c1f54e975dd07242223bf3b97092f3e",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/input_video.mp4": "1d8a3cc78ab60707d436723f4f771ea35aa97dac26a87feed85586a5a3ce169f",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/metadata.json": "10747423e1a0f168166ed7d71e9d8483450037232b0d43334516010fe5ded6a9",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/prompt.txt": "43f90d166a5809f79c6323da62f6fff698351ff2f568ebf94f2f9951a65f6f14",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/reference/mask_video.mp4": "fe393aec1b1d70a1ff6b81d5710f7553b8770348b4b3f1230a56abab98630fa0",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/reference/object_appearance.png": "afd96abd07ace3133728ec1cf85f28113b477350b57d4c9b57904c2abc733ae2",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/target_video.mp4": "3bae04dbd373650fe4060eab3a46378cbdc2cdf5b988aa5c63fcc68b3a9120ab",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/input_video.mp4": "feb34f1d4dd8e3ca4b7f21225017f139ac22691b4b00ba75bea860c644a4f6e3",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/metadata.json": "ce1b472b7e898c8a8f5a63afeb8618c8a76aeba04462e51998c571539f558c30",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/prompt.txt": "c47902637500c0c3b872c9d4b935da0ddbffd100cc128a9d43fe9dda8ed90c77",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/reference/mask_video.mp4": "5278bf30438d45003dece162372ddab64268bc96d3c5361fcb66708b52e1e823",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/reference/object_appearance.png": "b9c1fc4c66680432f845a5d3bc61cfd5596b99778de3366a954c8b9d99ae5c29",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/target_video.mp4": "af679540217a22648abd5fca210a93714b8bba7883a8da1c497b7bf314e9a9e2",
+    "_batch_summary.json": "a6ec99a4437ebd417802844d98e9a51cae91d6db7275439232285a75a38e3677",
+    "audit_report.json": "b99b07bf090472fef62de035ed861885ea12b6cdf82087b78c980da7668af736"
+  },
+  "artifact_sha256": {
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/input_video.mp4": "92b45961b6ed8aaf59e3aa4cfb17e58c12d54a7f68b6100a9bd8459490074748",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/metadata.json": "9a454ab402993d7112658e0ac13643422164afdc68b7aeec5729bfd06b893c2c",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/prompt.txt": "62cca60a33411078c82cc480a2c0eb96561301856bb3e0462c0be697516ae4fc",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/reference/mask_video.mp4": "804eb06a5fde3e76d4cbc864782e0e78a4624947518168244b7487a27d583b56",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/reference/object_appearance.png": "0d4c5ad34c853426f4563e0250fb617326b45a3ecfa34ef41f4d6cf7d35d30ad",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001/target_video.mp4": "f61e62d76be812a11af7de4928d344fe0b1d029bcaad98ad13f89c0d8ee5b2e3",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/input_video.mp4": "295ae07e83fbc2cd9d9ea31955ee2451dcb95860965d454a875c05933502daf9",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/metadata.json": "db14e19f241e5a794ab5adefea31e74045466e6fb672b08f2f3f4061b559cd65",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/prompt.txt": "a6945ef11f390a60ebdc7651e907d148c2c632cacd1af282b5288f3372608f98",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/reference/mask_video.mp4": "e3c706f6c91fbaef1b019cf2545d76816d6721c29c917de274bb014d48a697de",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/reference/object_appearance.png": "f073c8c821aad8dc76abdae29735336649077fcdd6f62a1cdea620157d8dabb1",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002/target_video.mp4": "57832e36c01c46195dc4ecfa1cdf7eb9214cb62430eadb05d98f3417bb148f69",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/input_video.mp4": "a83760ee6f73fd5d31c61170ef9abc7d53c61f8fcd4cea57dbfb72b7012a2aef",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/metadata.json": "df6f53fe9be50afcf6ba26ff8337fde968bdaba2110c561e12a0ba0e15636f9b",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/prompt.txt": "cf44dfc2af586bc77d836248c1e8baee1b54b46b6be2ddfb02d660c62fbc442b",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/reference/mask_video.mp4": "e935bfea91b8d0ecec3fb96a908b1f3c15a45f192f4f8bb682acbae198e2b8bd",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/reference/object_appearance.png": "a9cedfcee121b6c41a51f8bb675578d535333fe32d06bea8eb8d849a16806ae5",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003/target_video.mp4": "5479c90d7a03703e67404fae3a66eba210c850a59a13c16e7492372951868d56",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/input_video.mp4": "03a7aef0b39a9198df9e32d8fdb59ddc38b5a539e08fe4328d61b4c9f5063c3c",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/metadata.json": "f3b767c9a95ea2907fb1ec3660e9254228c68f017e83dc9ce8bea7fff0d7d30a",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/prompt.txt": "3312bd10d2a13b514abc06a4ac9063a5b92cef2c26a5513956950599bde73758",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/reference/mask_video.mp4": "eeb34de8b4284df5b505c8c6886e081150019326b1c794e624e9c46726f258a0",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/reference/object_appearance.png": "9764fdd560be6f9424965a5aecf756df021f007c0010637b479f723bf4250bc1",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004/target_video.mp4": "1abd25c6950e7b96b88829ac05a2d0ce1c1f54e975dd07242223bf3b97092f3e",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/input_video.mp4": "1d8a3cc78ab60707d436723f4f771ea35aa97dac26a87feed85586a5a3ce169f",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/metadata.json": "10747423e1a0f168166ed7d71e9d8483450037232b0d43334516010fe5ded6a9",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/prompt.txt": "43f90d166a5809f79c6323da62f6fff698351ff2f568ebf94f2f9951a65f6f14",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/reference/mask_video.mp4": "fe393aec1b1d70a1ff6b81d5710f7553b8770348b4b3f1230a56abab98630fa0",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/reference/object_appearance.png": "afd96abd07ace3133728ec1cf85f28113b477350b57d4c9b57904c2abc733ae2",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005/target_video.mp4": "3bae04dbd373650fe4060eab3a46378cbdc2cdf5b988aa5c63fcc68b3a9120ab",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/input_video.mp4": "feb34f1d4dd8e3ca4b7f21225017f139ac22691b4b00ba75bea860c644a4f6e3",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/metadata.json": "ce1b472b7e898c8a8f5a63afeb8618c8a76aeba04462e51998c571539f558c30",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/prompt.txt": "c47902637500c0c3b872c9d4b935da0ddbffd100cc128a9d43fe9dda8ed90c77",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/reference/mask_video.mp4": "5278bf30438d45003dece162372ddab64268bc96d3c5361fcb66708b52e1e823",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/reference/object_appearance.png": "b9c1fc4c66680432f845a5d3bc61cfd5596b99778de3366a954c8b9d99ae5c29",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006/target_video.mp4": "af679540217a22648abd5fca210a93714b8bba7883a8da1c497b7bf314e9a9e2",
+    "_batch_summary.json": "a6ec99a4437ebd417802844d98e9a51cae91d6db7275439232285a75a38e3677"
+  }
+}

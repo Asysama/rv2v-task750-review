@@ -1,0 +1,2 @@
+True: a 30px-radius colored object moves with gravity (acceleration = +1.0 px/frame^2) and bounces inside a 2D box at 24 fps.
+Counterfactual: the same initial scene and intervention frame, but gravity is inverted (the object rises upward), violating the physical law of gravity exactly once. Setup is matched: identical initial position, identical background, identical object size and color.

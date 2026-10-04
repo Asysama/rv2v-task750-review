@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src https:; media-src https:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+  <title>Task_750 · Gate B · RV2V Workflow 3.6.1</title>
+  <style>
+    :root{--bg:#071019;--panel:#0e2030;--panel2:#132b3e;--line:#2d526d;--text:#edf8ff;--muted:#a8bdcc;--cyan:#62dcff;--green:#56e0a4;--amber:#ffd06b;--red:#ff7c83}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(circle at 12% 0,#174767 0,transparent 28%),var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,sans-serif}
+    main,.top{width:min(1440px,94vw);margin:auto}
+    .top{padding:42px 0 18px}
+    h1{font-size:clamp(38px,5vw,68px);line-height:1.02;margin:.15em 0}
+    h2{font-size:clamp(22px,2.4vw,34px);line-height:1.15;margin:.2em 0;overflow-wrap:anywhere}
+    h3{font-size:18px;margin:.15em 0}
+    .eyebrow{font:800 11px ui-monospace,monospace;letter-spacing:.13em;color:var(--cyan)}
+    .lede{font-size:18px;max-width:1050px;color:#d7e6ef}
+    .notice{padding:14px 16px;border:1px solid #84671e;background:#2b210c;border-radius:13px;color:#ffe5a6}
+    .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+    .compact-metrics{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+    .metric,.identity{border:1px solid var(--line);border-radius:14px;background:#091a28;padding:14px}
+    .metric b{display:block;color:var(--cyan);font-size:25px}
+    .identity{display:grid;grid-template-columns:190px 1fr;gap:6px 12px}
+    code{overflow-wrap:anywhere;color:#ccecff}
+    .role-panel{margin:10px 0 22px;padding:16px;border:1px solid var(--line);border-radius:14px;background:#091a28}
+    .contract-panel{margin:22px 0;padding:18px;border:1px solid var(--line);border-radius:14px;background:#091a28}
+    .status{display:inline-block;padding:2px 8px;border-radius:999px;font:800 11px ui-monospace,monospace}
+    .status.pass{color:var(--green);border:1px solid #287b5b;background:#092a20}
+    .status.fail{color:var(--red);border:1px solid #87464a;background:#301318}
+    .role-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    button{border:1px solid #477693;border-radius:9px;background:#123a54;color:var(--text);padding:9px 12px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+    button:hover:not(:disabled){background:#18506f}
+    button.primary{background:#12617b;border-color:#45bfe7}
+    button.active{outline:3px solid var(--cyan)}
+    button.selected{outline:3px solid var(--green)}
+    button:disabled{opacity:.35;cursor:not-allowed}
+    input[type=file]{max-width:290px;color:var(--muted)}
+    .sample{margin:28px 0;padding:20px;border:1px solid var(--line);border-radius:19px;background:linear-gradient(145deg,var(--panel2),#081622);box-shadow:0 18px 45px #0004}
+    .sample-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    .sample-title{font:700 18px/1.2 ui-monospace,monospace}
+    figure{margin:0;padding:0}
+    video{display:block;width:100%;background:#000;border-radius:9px;margin-top:6px}
+    .role-tag{font:800 10px ui-monospace,monospace;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em}
+    .checks{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0}
+    .check{display:flex;gap:6px;align-items:center;padding:5px 9px;border:1px solid var(--line);border-radius:8px;background:#091a28;cursor:pointer;font:600 13px ui-monospace,monospace}
+    .check.ok{border-color:#287b5b;background:#092a20;color:var(--green)}
+    .check.fail{border-color:#87464a;background:#301318;color:var(--red)}
+    .decision-row{display:flex;gap:10px;align-items:center;margin-top:8px;flex-wrap:wrap}
+    .kv{display:grid;grid-template-columns:200px 1fr;gap:4px 12px;font:13px ui-monospace,monospace;padding:8px 0}
+    .kv b{color:var(--muted);font-weight:400}
+    details{margin-top:8px}
+    summary{cursor:pointer;font-weight:700}
+    .ref-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    @media (max-width:780px){.ref-pair{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header class="top">
+  <div class="eyebrow">RV2V Workflow 3.6.1 · Gate B · Content-addressed bundle</div>
+  <h1>Task_750 · first_frame_mask_causal_object_inpainting</h1>
+  <p class="lede">ProPainter + DAVIS 2017 first-frame-mask guided causal object inpainting. CPU stand-in for ProPainter. Common HTML review surface for Owner and Human Evaluator; role-scoped playback and three-checklist per sample.</p>
+  <div class="metrics compact-metrics">
+    <div class="metric"><b>PASS</b>Audit overall</div>
+    <div class="metric"><b>6</b>Samples</div>
+    <div class="metric"><b>2f988bfeeaf6…</b>Bundle SHA-256</div>
+    <div class="metric"><b>6</b>Runtime accepted cases</div>
+    <div class="metric"><b>QinHuayi1001</b>Human Evaluator (live RV2V collaborator)</div>
+    <div class="metric"><b>0</b>Witness exit code</div>
+  </div>
+
+  <div class="identity">
+    <div><b>PR</b></div><div><a href="https://github.com/hipo-dev/rv2v-reasoning/pull/218">hipo-dev/rv2v-reasoning#218</a></div>
+    <div><b>Branch</b></div><div><code>asysama/generator/task-750/gate-b</code></div>
+    <div><b>Head</b></div><div><code>e28e49f4169a…</code></div>
+    <div><b>Canonical validator</b></div><div><code>reference/metadata_contract/validate.py</code> · exit 0 · 6/6 valid=true</div>
+  </div>
+
+  <div class="role-panel">
+    <b class="role-tag">Role selection</b>
+    <div class="role-controls">
+      <span class="role-tag">I am:</span>
+      <button id="role-owner" class="primary" onclick="setRole('owner')">Owner (Siyuan / Asysama)</button>
+      <button id="role-evaluator" onclick="setRole('evaluator')">Human Evaluator (QinHuayi1001)</button>
+      <span id="role-current" style="color:var(--muted)"></span>
+    </div>
+  </div>
+
+  <div class="contract-panel">
+    <b class="role-tag">Task contract</b>
+    <div class="kv">
+      <div><b>Input</b></div><div>512x512, 24 fps, 120 frames, 5 s H.264 (yuv420p) MP4 of a DAVIS-like 2D scene with a first-frame object.</div>
+      <div><b>Reference</b></div><div>Lossless 64x64 PNG (object appearance). Mask as MP4 reference asset (binary {0,255}).</div>
+      <div><b>Target</b></div><div>Same scene with the first-frame object inpainted (background fill) — single physical violation (anti-gravity).</div>
+      <div><b>Mask</b></div><div>512x512, 24 fps, 120 frames H.264 yuv444p MP4, three identical RGB channels.</div>
+      <div><b>Metadata</b></div><div>Metadata 1.0 with sample fingerprint and complete Reference inventory.</div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="sample" id="Task_750_first_frame_mask_causal_object_inpainting_000000001">
+  <div class="sample-header">
+    <div class="sample-title">Task_750_first_frame_mask_causal_object_inpainting_000000001</div>
+    <div class="role-tag">sample fingerprint · 3820df0a7cd776…</div>
+  </div>
+  <div class="kv">
+    <div><b>Input SHA-256</b></div><div><code>92b45961b6ed8aaf59e3aa4cfb17e58c12d54a7f68b6100a9bd8459490074748</code></div>
+    <div><b>Target SHA-256</b></div><div><code>f61e62d76be812a11af7de4928d344fe0b1d029bcaad98ad13f89c0d8ee5b2e3</code></div>
+    <div><b>Mask SHA-256</b></div><div><code>804eb06a5fde3e76d4cbc864782e0e78a4624947518168244b7487a27d583b56</code></div>
+    <div><b>Appearance SHA-256</b></div><div><code>0d4c5ad34c853426f4563e0250fb617326b45a3ecfa34ef41f4d6cf7d35d30ad</code></div>
+    <div><b>Reference dir</b></div><div><code>reference/</code> (object_appearance.png + mask_video.mp4)</div>
+  </div>
+
+  <h3>Input (True, original scene)</h3>
+  <figure>
+    <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 (yuv420p)</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000001/input_video.mp4" data-role="input" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000001"></video>
+  </figure>
+
+  <h3>Target (Counterfactual, anti-gravity twin)</h3>
+  <figure>
+    <figcaption class="role-tag">Same scene + 0.8 px/frame² anti-gravity. Matched control at frame 0.</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000001/target_video.mp4" data-role="target" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000001"></video>
+  </figure>
+
+  <div class="ref-pair">
+    <figure>
+      <h3 style="margin-top:6px">Reference · object appearance</h3>
+      <figcaption class="role-tag">Lossless 64x64 PNG</figcaption>
+      <img src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000001/reference/object_appearance.png" alt="object appearance reference" style="width:100%;border:1px solid var(--line);border-radius:9px">
+    </figure>
+    <figure>
+      <h3 style="margin-top:6px">Reference · mask</h3>
+      <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 yuv444p, binary {0,255}</figcaption>
+      <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000001/reference/mask_video.mp4" data-role="reference-mask" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000001"></video>
+    </figure>
+  </div>
+
+  <details>
+    <summary>Prompt</summary>
+    <pre style="white-space:pre-wrap;font:13px/1.5 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line)">True: a 24px-radius colored object moves with gravity (acceleration = +1.0 px/frame^2) and bounces inside a 2D box at 24 fps.
+Counterfactual: the same initial scene and intervention frame, but gravity is inverted (the object rises upward), violating the physical law of gravity exactly once. Setup is matched: identical initial position, identical background, identical object size and color.
+</pre>
+  </details>
+  <details>
+    <summary>Metadata (Metadata 1.0)</summary>
+    <pre style="white-space:pre-wrap;font:11px/1.4 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line);max-height:380px;overflow:auto">{
+  "schema_version": "1.0",
+  "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000001",
+  "task": {
+    "id": "Task_750",
+    "name": "first_frame_mask_causal_object_inpainting",
+    "modality": "rv2v"
+  },
+  "source": {
+    "dataset": "rv2v-workflow-task750-propainter-davis-standin",
+    "split": "gate-b-validation",
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000001",
+    "uri": "generator://task750/000000001"
+  },
+  "media": {
+    "input": {
+      "file": "input_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    },
+    "target": {
+      "file": "target_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    }
+  },
+  "reference": {
+    "directory": "reference",
+    "assets": [
+      {
+        "path": "reference/mask_video.mp4",
+        "mime_type": "video/mp4",
+        "bytes": 17578,
+        "sha256": "804eb06a5fde3e76d4cbc864782e0e78a4624947518168244b7487a27d583b56",
+        "properties": {
+          "width": 512,
+          "height": 512,
+          "fps": 24,
+          "num_frames": 120
+        }
+      },
+      {
+        "path": "reference/object_appearance.png",
+        "mime_type": "image/png",
+        "bytes": 136,
+        "sha256": "0d4c5ad34c853426f4563e0250fb617326b45a3ecfa34ef41f4d6cf7d35d30ad",
+        "properties": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    ]
+  },
+  "pipeline": {
+    "name": "task750-propainte-davis-inpainting-standin",
+    "version": "0.1.0",
+    "commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8"
+  },
+  "optional": {
+    "canary_only": false,
+    "excluded_from_final_and_exporters": false,
+    "human_evaluator_login": "QinHuayi1001",
+    "human_evaluator_selection_method": "live RV2V collaborator (verified via /repos/.../collaborators/QinHuayi1001 returns 204). Owner explicitly chose from queue-sorted eligible reviewers per V2V Workflow PDF step 6."
+  },
+  "identity": {
+    "sample_fingerprint": "3820df0a7cd776c260f775c496f549a97cf9f0cf00137a17606a3ce5983b2e9b"
+  }
+}</pre>
+  </details>
+
+  <div class="role-panel" style="margin:14px 0 0">
+    <b class="role-tag">Three-check review</b>
+    <div class="checks" id="checks-Task_750_first_frame_mask_causal_object_inpainting_000000001">
+      <span class="check" data-check="input-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000001" onclick="toggleCheck(this)">Input playback complete</span>
+      <span class="check" data-check="target-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000001" onclick="toggleCheck(this)">Target playback complete</span>
+      <span class="check" data-check="reference-intact" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000001" onclick="toggleCheck(this)">Reference inventory intact</span>
+      <span class="check" data-check="mask-binary" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000001" onclick="toggleCheck(this)">Mask binary / three identical RGB channels</span>
+      <span class="check" data-check="metadata-aligned" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000001" onclick="toggleCheck(this)">Prompt + metadata aligned</span>
+    </div>
+    <div class="decision-row">
+      <span class="role-tag">Decision:</span>
+      <button class="primary" onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000001','PASS')">PASS</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000001','CHANGES_REQUESTED')">CHANGES_REQUESTED</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000001','FAIL')">FAIL</button>
+      <span id="decision-Task_750_first_frame_mask_causal_object_inpainting_000000001" style="color:var(--muted);margin-left:10px"></span>
+    </div>
+  </div>
+</section>
+
+<section class="sample" id="Task_750_first_frame_mask_causal_object_inpainting_000000002">
+  <div class="sample-header">
+    <div class="sample-title">Task_750_first_frame_mask_causal_object_inpainting_000000002</div>
+    <div class="role-tag">sample fingerprint · 76693ab21df82b…</div>
+  </div>
+  <div class="kv">
+    <div><b>Input SHA-256</b></div><div><code>295ae07e83fbc2cd9d9ea31955ee2451dcb95860965d454a875c05933502daf9</code></div>
+    <div><b>Target SHA-256</b></div><div><code>57832e36c01c46195dc4ecfa1cdf7eb9214cb62430eadb05d98f3417bb148f69</code></div>
+    <div><b>Mask SHA-256</b></div><div><code>e3c706f6c91fbaef1b019cf2545d76816d6721c29c917de274bb014d48a697de</code></div>
+    <div><b>Appearance SHA-256</b></div><div><code>f073c8c821aad8dc76abdae29735336649077fcdd6f62a1cdea620157d8dabb1</code></div>
+    <div><b>Reference dir</b></div><div><code>reference/</code> (object_appearance.png + mask_video.mp4)</div>
+  </div>
+
+  <h3>Input (True, original scene)</h3>
+  <figure>
+    <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 (yuv420p)</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000002/input_video.mp4" data-role="input" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000002"></video>
+  </figure>
+
+  <h3>Target (Counterfactual, anti-gravity twin)</h3>
+  <figure>
+    <figcaption class="role-tag">Same scene + 0.8 px/frame² anti-gravity. Matched control at frame 0.</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000002/target_video.mp4" data-role="target" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000002"></video>
+  </figure>
+
+  <div class="ref-pair">
+    <figure>
+      <h3 style="margin-top:6px">Reference · object appearance</h3>
+      <figcaption class="role-tag">Lossless 64x64 PNG</figcaption>
+      <img src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000002/reference/object_appearance.png" alt="object appearance reference" style="width:100%;border:1px solid var(--line);border-radius:9px">
+    </figure>
+    <figure>
+      <h3 style="margin-top:6px">Reference · mask</h3>
+      <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 yuv444p, binary {0,255}</figcaption>
+      <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000002/reference/mask_video.mp4" data-role="reference-mask" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000002"></video>
+    </figure>
+  </div>
+
+  <details>
+    <summary>Prompt</summary>
+    <pre style="white-space:pre-wrap;font:13px/1.5 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line)">True: a 26px-radius colored object moves with gravity (acceleration = +1.0 px/frame^2) and bounces inside a 2D box at 24 fps.
+Counterfactual: the same initial scene and intervention frame, but gravity is inverted (the object rises upward), violating the physical law of gravity exactly once. Setup is matched: identical initial position, identical background, identical object size and color.
+</pre>
+  </details>
+  <details>
+    <summary>Metadata (Metadata 1.0)</summary>
+    <pre style="white-space:pre-wrap;font:11px/1.4 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line);max-height:380px;overflow:auto">{
+  "schema_version": "1.0",
+  "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000002",
+  "task": {
+    "id": "Task_750",
+    "name": "first_frame_mask_causal_object_inpainting",
+    "modality": "rv2v"
+  },
+  "source": {
+    "dataset": "rv2v-workflow-task750-propainter-davis-standin",
+    "split": "gate-b-validation",
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000002",
+    "uri": "generator://task750/000000002"
+  },
+  "media": {
+    "input": {
+      "file": "input_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    },
+    "target": {
+      "file": "target_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    }
+  },
+  "reference": {
+    "directory": "reference",
+    "assets": [
+      {
+        "path": "reference/mask_video.mp4",
+        "mime_type": "video/mp4",
+        "bytes": 17673,
+        "sha256": "e3c706f6c91fbaef1b019cf2545d76816d6721c29c917de274bb014d48a697de",
+        "properties": {
+          "width": 512,
+          "height": 512,
+          "fps": 24,
+          "num_frames": 120
+        }
+      },
+      {
+        "path": "reference/object_appearance.png",
+        "mime_type": "image/png",
+        "bytes": 136,
+        "sha256": "f073c8c821aad8dc76abdae29735336649077fcdd6f62a1cdea620157d8dabb1",
+        "properties": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    ]
+  },
+  "pipeline": {
+    "name": "task750-propainte-davis-inpainting-standin",
+    "version": "0.1.0",
+    "commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8"
+  },
+  "optional": {
+    "canary_only": false,
+    "excluded_from_final_and_exporters": false,
+    "human_evaluator_login": "QinHuayi1001",
+    "human_evaluator_selection_method": "live RV2V collaborator (verified via /repos/.../collaborators/QinHuayi1001 returns 204). Owner explicitly chose from queue-sorted eligible reviewers per V2V Workflow PDF step 6."
+  },
+  "identity": {
+    "sample_fingerprint": "76693ab21df82b441a4f3f6618d572d377db97ed6ab3e8e5fa6ee198a7dc54c6"
+  }
+}</pre>
+  </details>
+
+  <div class="role-panel" style="margin:14px 0 0">
+    <b class="role-tag">Three-check review</b>
+    <div class="checks" id="checks-Task_750_first_frame_mask_causal_object_inpainting_000000002">
+      <span class="check" data-check="input-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000002" onclick="toggleCheck(this)">Input playback complete</span>
+      <span class="check" data-check="target-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000002" onclick="toggleCheck(this)">Target playback complete</span>
+      <span class="check" data-check="reference-intact" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000002" onclick="toggleCheck(this)">Reference inventory intact</span>
+      <span class="check" data-check="mask-binary" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000002" onclick="toggleCheck(this)">Mask binary / three identical RGB channels</span>
+      <span class="check" data-check="metadata-aligned" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000002" onclick="toggleCheck(this)">Prompt + metadata aligned</span>
+    </div>
+    <div class="decision-row">
+      <span class="role-tag">Decision:</span>
+      <button class="primary" onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000002','PASS')">PASS</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000002','CHANGES_REQUESTED')">CHANGES_REQUESTED</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000002','FAIL')">FAIL</button>
+      <span id="decision-Task_750_first_frame_mask_causal_object_inpainting_000000002" style="color:var(--muted);margin-left:10px"></span>
+    </div>
+  </div>
+</section>
+
+<section class="sample" id="Task_750_first_frame_mask_causal_object_inpainting_000000003">
+  <div class="sample-header">
+    <div class="sample-title">Task_750_first_frame_mask_causal_object_inpainting_000000003</div>
+    <div class="role-tag">sample fingerprint · 6cd934979dec9d…</div>
+  </div>
+  <div class="kv">
+    <div><b>Input SHA-256</b></div><div><code>a83760ee6f73fd5d31c61170ef9abc7d53c61f8fcd4cea57dbfb72b7012a2aef</code></div>
+    <div><b>Target SHA-256</b></div><div><code>5479c90d7a03703e67404fae3a66eba210c850a59a13c16e7492372951868d56</code></div>
+    <div><b>Mask SHA-256</b></div><div><code>e935bfea91b8d0ecec3fb96a908b1f3c15a45f192f4f8bb682acbae198e2b8bd</code></div>
+    <div><b>Appearance SHA-256</b></div><div><code>a9cedfcee121b6c41a51f8bb675578d535333fe32d06bea8eb8d849a16806ae5</code></div>
+    <div><b>Reference dir</b></div><div><code>reference/</code> (object_appearance.png + mask_video.mp4)</div>
+  </div>
+
+  <h3>Input (True, original scene)</h3>
+  <figure>
+    <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 (yuv420p)</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000003/input_video.mp4" data-role="input" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000003"></video>
+  </figure>
+
+  <h3>Target (Counterfactual, anti-gravity twin)</h3>
+  <figure>
+    <figcaption class="role-tag">Same scene + 0.8 px/frame² anti-gravity. Matched control at frame 0.</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000003/target_video.mp4" data-role="target" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000003"></video>
+  </figure>
+
+  <div class="ref-pair">
+    <figure>
+      <h3 style="margin-top:6px">Reference · object appearance</h3>
+      <figcaption class="role-tag">Lossless 64x64 PNG</figcaption>
+      <img src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000003/reference/object_appearance.png" alt="object appearance reference" style="width:100%;border:1px solid var(--line);border-radius:9px">
+    </figure>
+    <figure>
+      <h3 style="margin-top:6px">Reference · mask</h3>
+      <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 yuv444p, binary {0,255}</figcaption>
+      <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000003/reference/mask_video.mp4" data-role="reference-mask" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000003"></video>
+    </figure>
+  </div>
+
+  <details>
+    <summary>Prompt</summary>
+    <pre style="white-space:pre-wrap;font:13px/1.5 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line)">True: a 28px-radius colored object moves with gravity (acceleration = +1.0 px/frame^2) and bounces inside a 2D box at 24 fps.
+Counterfactual: the same initial scene and intervention frame, but gravity is inverted (the object rises upward), violating the physical law of gravity exactly once. Setup is matched: identical initial position, identical background, identical object size and color.
+</pre>
+  </details>
+  <details>
+    <summary>Metadata (Metadata 1.0)</summary>
+    <pre style="white-space:pre-wrap;font:11px/1.4 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line);max-height:380px;overflow:auto">{
+  "schema_version": "1.0",
+  "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000003",
+  "task": {
+    "id": "Task_750",
+    "name": "first_frame_mask_causal_object_inpainting",
+    "modality": "rv2v"
+  },
+  "source": {
+    "dataset": "rv2v-workflow-task750-propainter-davis-standin",
+    "split": "gate-b-validation",
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000003",
+    "uri": "generator://task750/000000003"
+  },
+  "media": {
+    "input": {
+      "file": "input_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    },
+    "target": {
+      "file": "target_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    }
+  },
+  "reference": {
+    "directory": "reference",
+    "assets": [
+      {
+        "path": "reference/mask_video.mp4",
+        "mime_type": "video/mp4",
+        "bytes": 17835,
+        "sha256": "e935bfea91b8d0ecec3fb96a908b1f3c15a45f192f4f8bb682acbae198e2b8bd",
+        "properties": {
+          "width": 512,
+          "height": 512,
+          "fps": 24,
+          "num_frames": 120
+        }
+      },
+      {
+        "path": "reference/object_appearance.png",
+        "mime_type": "image/png",
+        "bytes": 136,
+        "sha256": "a9cedfcee121b6c41a51f8bb675578d535333fe32d06bea8eb8d849a16806ae5",
+        "properties": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    ]
+  },
+  "pipeline": {
+    "name": "task750-propainte-davis-inpainting-standin",
+    "version": "0.1.0",
+    "commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8"
+  },
+  "optional": {
+    "canary_only": false,
+    "excluded_from_final_and_exporters": false,
+    "human_evaluator_login": "QinHuayi1001",
+    "human_evaluator_selection_method": "live RV2V collaborator (verified via /repos/.../collaborators/QinHuayi1001 returns 204). Owner explicitly chose from queue-sorted eligible reviewers per V2V Workflow PDF step 6."
+  },
+  "identity": {
+    "sample_fingerprint": "6cd934979dec9d67a268efcb385db6b66c269711732df58041f44c5d00432d5c"
+  }
+}</pre>
+  </details>
+
+  <div class="role-panel" style="margin:14px 0 0">
+    <b class="role-tag">Three-check review</b>
+    <div class="checks" id="checks-Task_750_first_frame_mask_causal_object_inpainting_000000003">
+      <span class="check" data-check="input-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000003" onclick="toggleCheck(this)">Input playback complete</span>
+      <span class="check" data-check="target-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000003" onclick="toggleCheck(this)">Target playback complete</span>
+      <span class="check" data-check="reference-intact" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000003" onclick="toggleCheck(this)">Reference inventory intact</span>
+      <span class="check" data-check="mask-binary" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000003" onclick="toggleCheck(this)">Mask binary / three identical RGB channels</span>
+      <span class="check" data-check="metadata-aligned" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000003" onclick="toggleCheck(this)">Prompt + metadata aligned</span>
+    </div>
+    <div class="decision-row">
+      <span class="role-tag">Decision:</span>
+      <button class="primary" onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000003','PASS')">PASS</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000003','CHANGES_REQUESTED')">CHANGES_REQUESTED</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000003','FAIL')">FAIL</button>
+      <span id="decision-Task_750_first_frame_mask_causal_object_inpainting_000000003" style="color:var(--muted);margin-left:10px"></span>
+    </div>
+  </div>
+</section>
+
+<section class="sample" id="Task_750_first_frame_mask_causal_object_inpainting_000000004">
+  <div class="sample-header">
+    <div class="sample-title">Task_750_first_frame_mask_causal_object_inpainting_000000004</div>
+    <div class="role-tag">sample fingerprint · 2e1f6f46eb5ffb…</div>
+  </div>
+  <div class="kv">
+    <div><b>Input SHA-256</b></div><div><code>03a7aef0b39a9198df9e32d8fdb59ddc38b5a539e08fe4328d61b4c9f5063c3c</code></div>
+    <div><b>Target SHA-256</b></div><div><code>1abd25c6950e7b96b88829ac05a2d0ce1c1f54e975dd07242223bf3b97092f3e</code></div>
+    <div><b>Mask SHA-256</b></div><div><code>eeb34de8b4284df5b505c8c6886e081150019326b1c794e624e9c46726f258a0</code></div>
+    <div><b>Appearance SHA-256</b></div><div><code>9764fdd560be6f9424965a5aecf756df021f007c0010637b479f723bf4250bc1</code></div>
+    <div><b>Reference dir</b></div><div><code>reference/</code> (object_appearance.png + mask_video.mp4)</div>
+  </div>
+
+  <h3>Input (True, original scene)</h3>
+  <figure>
+    <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 (yuv420p)</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000004/input_video.mp4" data-role="input" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000004"></video>
+  </figure>
+
+  <h3>Target (Counterfactual, anti-gravity twin)</h3>
+  <figure>
+    <figcaption class="role-tag">Same scene + 0.8 px/frame² anti-gravity. Matched control at frame 0.</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000004/target_video.mp4" data-role="target" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000004"></video>
+  </figure>
+
+  <div class="ref-pair">
+    <figure>
+      <h3 style="margin-top:6px">Reference · object appearance</h3>
+      <figcaption class="role-tag">Lossless 64x64 PNG</figcaption>
+      <img src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000004/reference/object_appearance.png" alt="object appearance reference" style="width:100%;border:1px solid var(--line);border-radius:9px">
+    </figure>
+    <figure>
+      <h3 style="margin-top:6px">Reference · mask</h3>
+      <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 yuv444p, binary {0,255}</figcaption>
+      <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000004/reference/mask_video.mp4" data-role="reference-mask" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000004"></video>
+    </figure>
+  </div>
+
+  <details>
+    <summary>Prompt</summary>
+    <pre style="white-space:pre-wrap;font:13px/1.5 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line)">True: a 30px-radius colored object moves with gravity (acceleration = +1.0 px/frame^2) and bounces inside a 2D box at 24 fps.
+Counterfactual: the same initial scene and intervention frame, but gravity is inverted (the object rises upward), violating the physical law of gravity exactly once. Setup is matched: identical initial position, identical background, identical object size and color.
+</pre>
+  </details>
+  <details>
+    <summary>Metadata (Metadata 1.0)</summary>
+    <pre style="white-space:pre-wrap;font:11px/1.4 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line);max-height:380px;overflow:auto">{
+  "schema_version": "1.0",
+  "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000004",
+  "task": {
+    "id": "Task_750",
+    "name": "first_frame_mask_causal_object_inpainting",
+    "modality": "rv2v"
+  },
+  "source": {
+    "dataset": "rv2v-workflow-task750-propainter-davis-standin",
+    "split": "gate-b-validation",
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000004",
+    "uri": "generator://task750/000000004"
+  },
+  "media": {
+    "input": {
+      "file": "input_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    },
+    "target": {
+      "file": "target_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    }
+  },
+  "reference": {
+    "directory": "reference",
+    "assets": [
+      {
+        "path": "reference/mask_video.mp4",
+        "mime_type": "video/mp4",
+        "bytes": 17880,
+        "sha256": "eeb34de8b4284df5b505c8c6886e081150019326b1c794e624e9c46726f258a0",
+        "properties": {
+          "width": 512,
+          "height": 512,
+          "fps": 24,
+          "num_frames": 120
+        }
+      },
+      {
+        "path": "reference/object_appearance.png",
+        "mime_type": "image/png",
+        "bytes": 136,
+        "sha256": "9764fdd560be6f9424965a5aecf756df021f007c0010637b479f723bf4250bc1",
+        "properties": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    ]
+  },
+  "pipeline": {
+    "name": "task750-propainte-davis-inpainting-standin",
+    "version": "0.1.0",
+    "commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8"
+  },
+  "optional": {
+    "canary_only": false,
+    "excluded_from_final_and_exporters": false,
+    "human_evaluator_login": "QinHuayi1001",
+    "human_evaluator_selection_method": "live RV2V collaborator (verified via /repos/.../collaborators/QinHuayi1001 returns 204). Owner explicitly chose from queue-sorted eligible reviewers per V2V Workflow PDF step 6."
+  },
+  "identity": {
+    "sample_fingerprint": "2e1f6f46eb5ffb6b95db28990ec70ecacf35d7a889106757cd0a2a69560a0def"
+  }
+}</pre>
+  </details>
+
+  <div class="role-panel" style="margin:14px 0 0">
+    <b class="role-tag">Three-check review</b>
+    <div class="checks" id="checks-Task_750_first_frame_mask_causal_object_inpainting_000000004">
+      <span class="check" data-check="input-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000004" onclick="toggleCheck(this)">Input playback complete</span>
+      <span class="check" data-check="target-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000004" onclick="toggleCheck(this)">Target playback complete</span>
+      <span class="check" data-check="reference-intact" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000004" onclick="toggleCheck(this)">Reference inventory intact</span>
+      <span class="check" data-check="mask-binary" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000004" onclick="toggleCheck(this)">Mask binary / three identical RGB channels</span>
+      <span class="check" data-check="metadata-aligned" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000004" onclick="toggleCheck(this)">Prompt + metadata aligned</span>
+    </div>
+    <div class="decision-row">
+      <span class="role-tag">Decision:</span>
+      <button class="primary" onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000004','PASS')">PASS</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000004','CHANGES_REQUESTED')">CHANGES_REQUESTED</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000004','FAIL')">FAIL</button>
+      <span id="decision-Task_750_first_frame_mask_causal_object_inpainting_000000004" style="color:var(--muted);margin-left:10px"></span>
+    </div>
+  </div>
+</section>
+
+<section class="sample" id="Task_750_first_frame_mask_causal_object_inpainting_000000005">
+  <div class="sample-header">
+    <div class="sample-title">Task_750_first_frame_mask_causal_object_inpainting_000000005</div>
+    <div class="role-tag">sample fingerprint · 628d2007ca9b3c…</div>
+  </div>
+  <div class="kv">
+    <div><b>Input SHA-256</b></div><div><code>1d8a3cc78ab60707d436723f4f771ea35aa97dac26a87feed85586a5a3ce169f</code></div>
+    <div><b>Target SHA-256</b></div><div><code>3bae04dbd373650fe4060eab3a46378cbdc2cdf5b988aa5c63fcc68b3a9120ab</code></div>
+    <div><b>Mask SHA-256</b></div><div><code>fe393aec1b1d70a1ff6b81d5710f7553b8770348b4b3f1230a56abab98630fa0</code></div>
+    <div><b>Appearance SHA-256</b></div><div><code>afd96abd07ace3133728ec1cf85f28113b477350b57d4c9b57904c2abc733ae2</code></div>
+    <div><b>Reference dir</b></div><div><code>reference/</code> (object_appearance.png + mask_video.mp4)</div>
+  </div>
+
+  <h3>Input (True, original scene)</h3>
+  <figure>
+    <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 (yuv420p)</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000005/input_video.mp4" data-role="input" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000005"></video>
+  </figure>
+
+  <h3>Target (Counterfactual, anti-gravity twin)</h3>
+  <figure>
+    <figcaption class="role-tag">Same scene + 0.8 px/frame² anti-gravity. Matched control at frame 0.</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000005/target_video.mp4" data-role="target" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000005"></video>
+  </figure>
+
+  <div class="ref-pair">
+    <figure>
+      <h3 style="margin-top:6px">Reference · object appearance</h3>
+      <figcaption class="role-tag">Lossless 64x64 PNG</figcaption>
+      <img src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000005/reference/object_appearance.png" alt="object appearance reference" style="width:100%;border:1px solid var(--line);border-radius:9px">
+    </figure>
+    <figure>
+      <h3 style="margin-top:6px">Reference · mask</h3>
+      <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 yuv444p, binary {0,255}</figcaption>
+      <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000005/reference/mask_video.mp4" data-role="reference-mask" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000005"></video>
+    </figure>
+  </div>
+
+  <details>
+    <summary>Prompt</summary>
+    <pre style="white-space:pre-wrap;font:13px/1.5 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line)">True: a 32px-radius colored object moves with gravity (acceleration = +1.0 px/frame^2) and bounces inside a 2D box at 24 fps.
+Counterfactual: the same initial scene and intervention frame, but gravity is inverted (the object rises upward), violating the physical law of gravity exactly once. Setup is matched: identical initial position, identical background, identical object size and color.
+</pre>
+  </details>
+  <details>
+    <summary>Metadata (Metadata 1.0)</summary>
+    <pre style="white-space:pre-wrap;font:11px/1.4 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line);max-height:380px;overflow:auto">{
+  "schema_version": "1.0",
+  "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000005",
+  "task": {
+    "id": "Task_750",
+    "name": "first_frame_mask_causal_object_inpainting",
+    "modality": "rv2v"
+  },
+  "source": {
+    "dataset": "rv2v-workflow-task750-propainter-davis-standin",
+    "split": "gate-b-validation",
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000005",
+    "uri": "generator://task750/000000005"
+  },
+  "media": {
+    "input": {
+      "file": "input_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    },
+    "target": {
+      "file": "target_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    }
+  },
+  "reference": {
+    "directory": "reference",
+    "assets": [
+      {
+        "path": "reference/mask_video.mp4",
+        "mime_type": "video/mp4",
+        "bytes": 18023,
+        "sha256": "fe393aec1b1d70a1ff6b81d5710f7553b8770348b4b3f1230a56abab98630fa0",
+        "properties": {
+          "width": 512,
+          "height": 512,
+          "fps": 24,
+          "num_frames": 120
+        }
+      },
+      {
+        "path": "reference/object_appearance.png",
+        "mime_type": "image/png",
+        "bytes": 136,
+        "sha256": "afd96abd07ace3133728ec1cf85f28113b477350b57d4c9b57904c2abc733ae2",
+        "properties": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    ]
+  },
+  "pipeline": {
+    "name": "task750-propainte-davis-inpainting-standin",
+    "version": "0.1.0",
+    "commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8"
+  },
+  "optional": {
+    "canary_only": false,
+    "excluded_from_final_and_exporters": false,
+    "human_evaluator_login": "QinHuayi1001",
+    "human_evaluator_selection_method": "live RV2V collaborator (verified via /repos/.../collaborators/QinHuayi1001 returns 204). Owner explicitly chose from queue-sorted eligible reviewers per V2V Workflow PDF step 6."
+  },
+  "identity": {
+    "sample_fingerprint": "628d2007ca9b3c747249051d8c52831be3886b0d93853acf9c56edbd22a73428"
+  }
+}</pre>
+  </details>
+
+  <div class="role-panel" style="margin:14px 0 0">
+    <b class="role-tag">Three-check review</b>
+    <div class="checks" id="checks-Task_750_first_frame_mask_causal_object_inpainting_000000005">
+      <span class="check" data-check="input-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000005" onclick="toggleCheck(this)">Input playback complete</span>
+      <span class="check" data-check="target-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000005" onclick="toggleCheck(this)">Target playback complete</span>
+      <span class="check" data-check="reference-intact" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000005" onclick="toggleCheck(this)">Reference inventory intact</span>
+      <span class="check" data-check="mask-binary" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000005" onclick="toggleCheck(this)">Mask binary / three identical RGB channels</span>
+      <span class="check" data-check="metadata-aligned" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000005" onclick="toggleCheck(this)">Prompt + metadata aligned</span>
+    </div>
+    <div class="decision-row">
+      <span class="role-tag">Decision:</span>
+      <button class="primary" onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000005','PASS')">PASS</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000005','CHANGES_REQUESTED')">CHANGES_REQUESTED</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000005','FAIL')">FAIL</button>
+      <span id="decision-Task_750_first_frame_mask_causal_object_inpainting_000000005" style="color:var(--muted);margin-left:10px"></span>
+    </div>
+  </div>
+</section>
+
+<section class="sample" id="Task_750_first_frame_mask_causal_object_inpainting_000000006">
+  <div class="sample-header">
+    <div class="sample-title">Task_750_first_frame_mask_causal_object_inpainting_000000006</div>
+    <div class="role-tag">sample fingerprint · 9d4249871d7281…</div>
+  </div>
+  <div class="kv">
+    <div><b>Input SHA-256</b></div><div><code>feb34f1d4dd8e3ca4b7f21225017f139ac22691b4b00ba75bea860c644a4f6e3</code></div>
+    <div><b>Target SHA-256</b></div><div><code>af679540217a22648abd5fca210a93714b8bba7883a8da1c497b7bf314e9a9e2</code></div>
+    <div><b>Mask SHA-256</b></div><div><code>5278bf30438d45003dece162372ddab64268bc96d3c5361fcb66708b52e1e823</code></div>
+    <div><b>Appearance SHA-256</b></div><div><code>b9c1fc4c66680432f845a5d3bc61cfd5596b99778de3366a954c8b9d99ae5c29</code></div>
+    <div><b>Reference dir</b></div><div><code>reference/</code> (object_appearance.png + mask_video.mp4)</div>
+  </div>
+
+  <h3>Input (True, original scene)</h3>
+  <figure>
+    <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 (yuv420p)</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000006/input_video.mp4" data-role="input" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000006"></video>
+  </figure>
+
+  <h3>Target (Counterfactual, anti-gravity twin)</h3>
+  <figure>
+    <figcaption class="role-tag">Same scene + 0.8 px/frame² anti-gravity. Matched control at frame 0.</figcaption>
+    <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000006/target_video.mp4" data-role="target" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000006"></video>
+  </figure>
+
+  <div class="ref-pair">
+    <figure>
+      <h3 style="margin-top:6px">Reference · object appearance</h3>
+      <figcaption class="role-tag">Lossless 64x64 PNG</figcaption>
+      <img src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000006/reference/object_appearance.png" alt="object appearance reference" style="width:100%;border:1px solid var(--line);border-radius:9px">
+    </figure>
+    <figure>
+      <h3 style="margin-top:6px">Reference · mask</h3>
+      <figcaption class="role-tag">512x512, 24 fps, 120 frames, H.264 yuv444p, binary {0,255}</figcaption>
+      <video controls preload="metadata" src="media/2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208/Task_750_first_frame_mask_causal_object_inpainting_000000006/reference/mask_video.mp4" data-role="reference-mask" data-sample-id="Task_750_first_frame_mask_causal_object_inpainting_000000006"></video>
+    </figure>
+  </div>
+
+  <details>
+    <summary>Prompt</summary>
+    <pre style="white-space:pre-wrap;font:13px/1.5 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line)">True: a 22px-radius colored object moves with gravity (acceleration = +1.0 px/frame^2) and bounces inside a 2D box at 24 fps.
+Counterfactual: the same initial scene and intervention frame, but gravity is inverted (the object rises upward), violating the physical law of gravity exactly once. Setup is matched: identical initial position, identical background, identical object size and color.
+</pre>
+  </details>
+  <details>
+    <summary>Metadata (Metadata 1.0)</summary>
+    <pre style="white-space:pre-wrap;font:11px/1.4 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line);max-height:380px;overflow:auto">{
+  "schema_version": "1.0",
+  "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000006",
+  "task": {
+    "id": "Task_750",
+    "name": "first_frame_mask_causal_object_inpainting",
+    "modality": "rv2v"
+  },
+  "source": {
+    "dataset": "rv2v-workflow-task750-propainter-davis-standin",
+    "split": "gate-b-validation",
+    "sample_id": "Task_750_first_frame_mask_causal_object_inpainting_000000006",
+    "uri": "generator://task750/000000006"
+  },
+  "media": {
+    "input": {
+      "file": "input_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    },
+    "target": {
+      "file": "target_video.mp4",
+      "width": 512,
+      "height": 512,
+      "fps": 24,
+      "num_frames": 120
+    }
+  },
+  "reference": {
+    "directory": "reference",
+    "assets": [
+      {
+        "path": "reference/mask_video.mp4",
+        "mime_type": "video/mp4",
+        "bytes": 17405,
+        "sha256": "5278bf30438d45003dece162372ddab64268bc96d3c5361fcb66708b52e1e823",
+        "properties": {
+          "width": 512,
+          "height": 512,
+          "fps": 24,
+          "num_frames": 120
+        }
+      },
+      {
+        "path": "reference/object_appearance.png",
+        "mime_type": "image/png",
+        "bytes": 135,
+        "sha256": "b9c1fc4c66680432f845a5d3bc61cfd5596b99778de3366a954c8b9d99ae5c29",
+        "properties": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    ]
+  },
+  "pipeline": {
+    "name": "task750-propainte-davis-inpainting-standin",
+    "version": "0.1.0",
+    "commit": "e28e49f4169a6e75748b6853e02dee7ea6acb9e8"
+  },
+  "optional": {
+    "canary_only": false,
+    "excluded_from_final_and_exporters": false,
+    "human_evaluator_login": "QinHuayi1001",
+    "human_evaluator_selection_method": "live RV2V collaborator (verified via /repos/.../collaborators/QinHuayi1001 returns 204). Owner explicitly chose from queue-sorted eligible reviewers per V2V Workflow PDF step 6."
+  },
+  "identity": {
+    "sample_fingerprint": "9d4249871d72814d2d3b94a27613811d99d40c0485b72fe1b93bf0fc2ed7a468"
+  }
+}</pre>
+  </details>
+
+  <div class="role-panel" style="margin:14px 0 0">
+    <b class="role-tag">Three-check review</b>
+    <div class="checks" id="checks-Task_750_first_frame_mask_causal_object_inpainting_000000006">
+      <span class="check" data-check="input-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000006" onclick="toggleCheck(this)">Input playback complete</span>
+      <span class="check" data-check="target-played" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000006" onclick="toggleCheck(this)">Target playback complete</span>
+      <span class="check" data-check="reference-intact" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000006" onclick="toggleCheck(this)">Reference inventory intact</span>
+      <span class="check" data-check="mask-binary" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000006" onclick="toggleCheck(this)">Mask binary / three identical RGB channels</span>
+      <span class="check" data-check="metadata-aligned" data-sample="Task_750_first_frame_mask_causal_object_inpainting_000000006" onclick="toggleCheck(this)">Prompt + metadata aligned</span>
+    </div>
+    <div class="decision-row">
+      <span class="role-tag">Decision:</span>
+      <button class="primary" onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000006','PASS')">PASS</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000006','CHANGES_REQUESTED')">CHANGES_REQUESTED</button>
+      <button onclick="setDecision('Task_750_first_frame_mask_causal_object_inpainting_000000006','FAIL')">FAIL</button>
+      <span id="decision-Task_750_first_frame_mask_causal_object_inpainting_000000006" style="color:var(--muted);margin-left:10px"></span>
+    </div>
+  </div>
+</section>
+
+<section style="margin-top:36px">
+  <h2>Audit summary</h2>
+  <div class="metrics compact-metrics">
+    <div class="metric"><b>PASS</b>output_contract</div>
+    <div class="metric"><b>PASS</b>violating_object_only_mask</div>
+    <div class="metric"><b>PASS</b>real_scaling</div>
+    <div class="metric"><b>PASS</b>canonical_validator</div>
+    <div class="metric"><b>PASS</b>decoded_matched_control</div>
+    <div class="metric"><b>PASS</b>semantic_consistency</div>
+  </div>
+  <details>
+    <summary>audit_report.json (full)</summary>
+    <pre style="white-space:pre-wrap;font:11px/1.4 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line);max-height:380px;overflow:auto">{
+  "overall": "PASS",
+  "n_samples": 6,
+  "gates": {
+    "output_contract": {
+      "result": "PASS",
+      "evidence": {
+        "input_video": {
+          "codec": "h264",
+          "w": 512,
+          "h": 512,
+          "fps": "24/1",
+          "n": 120,
+          "ok": true
+        },
+        "target_video": {
+          "codec": "h264",
+          "w": 512,
+          "h": 512,
+          "fps": "24/1",
+          "n": 120,
+          "ok": true
+        }
+      }
+    },
+    "violating_object_only_mask": {
+      "result": "PASS",
+      "evidence": {
+        "bad_frames": []
+      }
+    },
+    "real_scaling": {
+      "result": "PASS",
+      "evidence": {
+        "n_samples": 6,
+        "distinct_fingerprints": 6
+      }
+    },
+    "official_environment_canonical_validator": {
+      "result": "PASS",
+      "evidence": {
+        "stdout_tail": " \"core_object_count\": 4,\n      \"reference_object_count\": 2,\n      \"payload_object_count\": 6,\n      \"valid\": true\n    },\n    {\n      \"schema\": \"rv2v-sample-validation/1\",\n      \"sample_id\": \"Task_750_first_frame_mask_causal_object_inpainting_000000006\",\n      \"core_object_count\": 4,\n      \"reference_object_count\": 2,\n      \"payload_object_count\": 6,\n      \"valid\": true\n    }\n  ],\n  \"valid\": true\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    "decoded_matched_control": {
+      "result": "PASS",
+      "evidence": {
+        "matched_pre_frames": 1,
+        "diverging_frames": 119
+      }
+    },
+    "semantic_consistency": {
+      "result": "PASS",
+      "evidence": {
+        "issues": [],
+        "prompt_len": 393
+      }
+    }
+  },
+  "per_sample": {
+    "Task_750_first_frame_mask_causal_object_inpainting_000000001": "PASS",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000002": "PASS",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000003": "PASS",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000004": "PASS",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000005": "PASS",
+    "Task_750_first_frame_mask_causal_object_inpainting_000000006": "PASS"
+  }
+}</pre>
+  </details>
+</section>
+
+<section style="margin-top:36px">
+  <h2>Per-sample verdict</h2>
+  <div class="kv">
+    <div><b>Task_750_first_frame_mask_causal_object_inpainting_000000001</b></div><div><span class="status pass">PASS</span></div>
+    <div><b>Task_750_first_frame_mask_causal_object_inpainting_000000002</b></div><div><span class="status pass">PASS</span></div>
+    <div><b>Task_750_first_frame_mask_causal_object_inpainting_000000003</b></div><div><span class="status pass">PASS</span></div>
+    <div><b>Task_750_first_frame_mask_causal_object_inpainting_000000004</b></div><div><span class="status pass">PASS</span></div>
+    <div><b>Task_750_first_frame_mask_causal_object_inpainting_000000005</b></div><div><span class="status pass">PASS</span></div>
+    <div><b>Task_750_first_frame_mask_causal_object_inpainting_000000006</b></div><div><span class="status pass">PASS</span></div>
+</div></section>
+<section style="margin-top:36px">
+  <h2>Workflow actions</h2>
+  <div class="role-panel">
+    <b class="role-tag">Role: Owner (Siyuan/Asysama) or Human Evaluator (QinHuayi1001)</b>
+    <p style="color:var(--muted);margin:6px 0">
+      Click each sample's three-check buttons in turn, then <b>PASS</b>/<b>CHANGES_REQUESTED</b>/<b>FAIL</b>.
+      Decision is recorded in <code>localStorage</code> for this browser only.
+    </p>
+    <div class="role-controls">
+      <button onclick="exportOwner('owner')">Export owner import</button>
+      <button onclick="exportOwner('evaluator')">Export evaluator decision draft</button>
+      <button onclick="clearLocal()">Clear local decisions</button>
+    </div>
+    <pre id="export-out" style="white-space:pre-wrap;font:11px/1.4 ui-monospace,monospace;background:#091a28;padding:10px;border-radius:9px;border:1px solid var(--line);max-height:280px;overflow:auto;margin-top:10px">Export not run yet.</pre>
+  </div>
+</section>
+</main>
+
+<script>
+const ROLE = { 'owner': 'Siyuan / Asysama', 'evaluator': 'QinHuayi1001' };
+let role = null;
+function setRole(r) {
+  role = r;
+  document.getElementById('role-current').textContent = 'Acting as: ' + ROLE[r];
+  ['role-owner','role-evaluator'].forEach((id) => document.getElementById(id).classList.remove('active'));
+  document.getElementById('role-' + r).classList.add('active');
+}
+function toggleCheck(el) { el.classList.toggle('ok'); }
+function setDecision(sid, v) {
+  document.getElementById('decision-' + sid).textContent = 'Decision: ' + v;
+  try { localStorage.setItem('task750:' + sid, JSON.stringify({role, decision: v, ts: Date.now()})); } catch (e) {}
+}
+function exportOwner(roleOut) {
+  const data = {};
+  document.querySelectorAll('section.sample').forEach((sec) => {
+    const sid = sec.id;
+    const checks = Array.from(sec.querySelectorAll('.check')).map((c) => ({
+      check: c.dataset.check, ok: c.classList.contains('ok')
+    }));
+    const decEl = document.getElementById('decision-' + sid);
+    data[sid] = { checks, decision: decEl ? decEl.textContent : null };
+  });
+  const out = {
+    schema_version: 'rv2v-task750-gate-b-review-export/1',
+    role: roleOut,
+    head_commit: 'e28e49f4169a6e75748b6853e02dee7ea6acb9e8',
+    human_evaluator_login: roleOut === 'evaluator' ? 'QinHuayi1001' : null,
+    bundle_sha: '2f988bfeeaf6cf0ca88b69d839b8424c2aec970237c4ef39a9a916ffcf7e8208',
+    samples: data,
+    ts: Date.now(),
+  }};
+  document.getElementById('export-out').textContent = JSON.stringify(out, null, 2);
+}}
+function clearLocal() {{
+  try {{ Object.keys(localStorage).filter(k => k.startsWith('task750:')).forEach(k => localStorage.removeItem(k)); }} catch (e) {{}}
+  document.querySelectorAll('.check.ok').forEach((c) => c.classList.remove('ok'));
+  document.querySelectorAll('[id^="decision-"]').forEach((d) => d.textContent = '');
+}}
+</script>
+</body>
+</html>
